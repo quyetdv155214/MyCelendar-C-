@@ -23,7 +23,7 @@ namespace MyCelendar.dal
             {
                 Task t = new Task(dr);
                 tasks.Add(t);
-                Console.WriteLine("task Context : add task");
+//                Console.WriteLine("task Context : add task");
             }
             return tasks;
         }

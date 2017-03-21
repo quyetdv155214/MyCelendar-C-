@@ -33,7 +33,6 @@
             this.tbView = new System.Windows.Forms.TabPage();
             this.panelView = new System.Windows.Forms.Panel();
             this.gbTask = new System.Windows.Forms.GroupBox();
-            this.pMyTask = new MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel();
             this.pCategory = new System.Windows.Forms.Panel();
             this.clbTimeTag = new System.Windows.Forms.CheckedListBox();
             this.cb_type = new System.Windows.Forms.ComboBox();
@@ -51,7 +50,6 @@
             this.tab.SuspendLayout();
             this.tbView.SuspendLayout();
             this.panelView.SuspendLayout();
-            this.gbTask.SuspendLayout();
             this.pCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myCelendarDataSet)).BeginInit();
@@ -63,10 +61,10 @@
             // 
             this.tab.Controls.Add(this.tbView);
             this.tab.Controls.Add(this.tbAdd);
-            this.tab.Location = new System.Drawing.Point(4, 27);
+            this.tab.Location = new System.Drawing.Point(4, 39);
             this.tab.Name = "tab";
             this.tab.SelectedIndex = 0;
-            this.tab.Size = new System.Drawing.Size(832, 599);
+            this.tab.Size = new System.Drawing.Size(832, 587);
             this.tab.TabIndex = 6;
             // 
             // tbView
@@ -75,7 +73,7 @@
             this.tbView.Location = new System.Drawing.Point(4, 22);
             this.tbView.Name = "tbView";
             this.tbView.Padding = new System.Windows.Forms.Padding(3);
-            this.tbView.Size = new System.Drawing.Size(824, 573);
+            this.tbView.Size = new System.Drawing.Size(824, 561);
             this.tbView.TabIndex = 0;
             this.tbView.Text = "View";
             this.tbView.UseVisualStyleBackColor = true;
@@ -92,7 +90,6 @@
             // 
             // gbTask
             // 
-            this.gbTask.Controls.Add(this.pMyTask);
             this.gbTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTask.Location = new System.Drawing.Point(246, 9);
             this.gbTask.Name = "gbTask";
@@ -101,14 +98,6 @@
             this.gbTask.TabIndex = 5;
             this.gbTask.TabStop = false;
             this.gbTask.Text = "My Task";
-            // 
-            // pMyTask
-            // 
-            this.pMyTask.AutoScroll = true;
-            this.pMyTask.Location = new System.Drawing.Point(19, 40);
-            this.pMyTask.Name = "pMyTask";
-            this.pMyTask.Size = new System.Drawing.Size(526, 498);
-            this.pMyTask.TabIndex = 0;
             // 
             // pCategory
             // 
@@ -179,7 +168,7 @@
             this.tbAdd.Location = new System.Drawing.Point(4, 22);
             this.tbAdd.Name = "tbAdd";
             this.tbAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tbAdd.Size = new System.Drawing.Size(824, 573);
+            this.tbAdd.Size = new System.Drawing.Size(824, 561);
             this.tbAdd.TabIndex = 1;
             this.tbAdd.Text = "Add";
             this.tbAdd.UseVisualStyleBackColor = true;
@@ -214,6 +203,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // taskCategoryTableAdapter
             // 
@@ -228,12 +218,12 @@
             this.Controls.Add(this.tab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Celendar";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tab.ResumeLayout(false);
             this.tbView.ResumeLayout(false);
             this.panelView.ResumeLayout(false);
-            this.gbTask.ResumeLayout(false);
             this.pCategory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.taskCategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myCelendarDataSet)).EndInit();
@@ -265,7 +255,6 @@
         private MyCelendarDataSet myCelendarDataSet;
         private System.Windows.Forms.BindingSource taskCategoryBindingSource;
         private MyCelendarDataSetTableAdapters.TaskCategoryTableAdapter taskCategoryTableAdapter;
-        private MakarovDev.ExpandCollapsePanel.AdvancedFlowLayoutPanel pMyTask;
     }
 }
 
