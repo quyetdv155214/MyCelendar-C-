@@ -75,5 +75,12 @@ namespace MyCelendar.model
             IsFullDay = Convert.ToBoolean(dr["fullday"].ToString());
             CategoryID = Convert.ToInt32(dr["categoryID"].ToString());
         }
+
+        public override string ToString()
+        {
+            return $"id {TaskID} , name= {TaskName}, date = {Date} , timeFrom = {TimeFrom} \n " +
+                   $" timto = {TimeTo}, location ={Location}, detail ={Detail}, priority = {Priority} \n" +
+                   $"timeTag = {TimeTagID} , is full={IsFullDay}, cateID = {CategoryID}   ";
+        }
     }
 }

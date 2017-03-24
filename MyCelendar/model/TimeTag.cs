@@ -14,6 +14,14 @@ namespace MyCelendar.model
         public string TimeFrom { get; set; }
         public string TimeTo { get; set; }
 
+        public TimeTag(int id , string timeTagName, string timeFrom, string timeTo)
+        {
+            TimeTagID = id;
+            TimeTagName = timeTagName;
+            TimeFrom = timeFrom;
+            TimeTo = timeTo;
+        }
+
         public TimeTag(int timeTagId, string timeTagName, int categoryId, string timeFrom, string timeTo)
         {
             TimeTagID = timeTagId;
@@ -23,5 +31,13 @@ namespace MyCelendar.model
             TimeTo = timeTo;
         }
 
+        public TimeTag()
+        {
+            TimeFrom = "";
+            TimeTagName = "";
+            TimeTo = "";
+            CategoryID = -1;
+
+        }
     }
 }

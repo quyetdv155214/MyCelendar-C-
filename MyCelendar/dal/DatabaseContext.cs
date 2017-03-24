@@ -120,10 +120,13 @@ namespace MyCelendar.dal
 
         public DataTable GetAllTimeTags(int catID)
         {
-            List<TimeTag> list = new List<TimeTag>();
             string sql = "SELECT [timeTagID],[timeTagName],[categoryID],[timefrom],[timeto] " +
                          " FROM [dbo].[TimeTag] Where categoryID = @param ";
             DataTable table;
+            if (catID == 1)
+            {
+                sql += " or 1 = 1 ";
+            }
             try
             {
                 table = MyExecuteQuery(sql, new object[] {catID});
@@ -137,5 +140,63 @@ namespace MyCelendar.dal
             return table;
 
         }
+
+        public List<TimeTag> getListTimeTag(DataTable dt, List<TimeTag> list )
+        {
+          
+            foreach (DataRow dr in dt.Rows)
+            {
+                TimeTag tt = new TimeTag();
+                tt.CategoryID = Convert.ToInt32(dr["categoryID"]);
+                tt.TimeFrom = dr["timefrom"].ToString();
+                tt.TimeTo = dr["timeto"].ToString();
+                tt.TimeTagName = dr["timeTagName"].ToString();
+                try
+                {
+                    tt.TimeTagID = Convert.ToInt32(dr["timeTagID"]);
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                list.Add(tt);
+              
+            }
+            return list;
+
+        }
+
+        public DataTable getAllCategory()
+        {
+            String sql = "SELECT [categoryID] , [categoryName] FROM [dbo].[TaskCategory] where categoryID !=1";
+            DataTable dataTable = MyExecuteQuery(sql);
+            return dataTable;
+        }
+
+        public bool addCate(String name)
+        {
+            String sql = "INSERT INTO [dbo].[TaskCategory] ([categoryName]) VALUES ( @name )";
+            int i = MyExecuteNonQuery(sql, new object[] {name});
+            return i > 0;
+
+        }
+
+        public bool addTimeTag(TimeTag timeTag)
+        {
+            String sql =
+                "INSERT INTO [dbo].[TimeTag] ([timeTagName] ,[categoryID],[timefrom] ,[timeto]) VALUES ( @name  , @catId , @timefrom , @timeTo )";
+            int i = MyExecuteNonQuery(sql, new object[]
+            {
+                timeTag.TimeTagName,
+                timeTag.CategoryID,
+                timeTag.TimeFrom,
+                timeTag.TimeTo
+            });
+            return i > 0;
+        }
+
+
     }
 }

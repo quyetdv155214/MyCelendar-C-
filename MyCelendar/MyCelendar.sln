@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCelendar", "MyCelendar.csproj", "{F167C991-123F-45BA-8C49-79DDDCC8B857}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakarovDev.ExpandCollapsePanel", "..\..\..\Library\ExpandCollapsePanel-master\MakarovDev.ExpandCollapsePanel\MakarovDev.ExpandCollapsePanel.csproj", "{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakarovDev.ExpandCollapsePanel", "MakarovDev.ExpandCollapsePanel\MakarovDev.ExpandCollapsePanel.csproj", "{BE76A6FE-225F-4287-9CA0-231F5AF4CDC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
